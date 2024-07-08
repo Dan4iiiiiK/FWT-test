@@ -1,0 +1,107 @@
+.paginate_block {
+  text-align: center;
+  margin-top: 8px;
+
+    li {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 22.4px;
+      color: var(--page-btnPage-color);
+      border: 0;
+      background-color: var(--page-btnPage-background-color);
+      transition-duration: .3s;
+      transition-property: border-bottom, background-color, font-weight ;
+      transition-timing-function: ease-in-out;
+      cursor: pointer;
+      border-radius: 0;
+      display: inline-block;
+      padding: 0;
+
+        a {
+          padding: 1px 8px;
+        }
+
+        &:hover {
+          border-bottom: var(--page-btnPageHover-border);
+        }
+    }
+    :global{
+
+      .selected {
+        background-color: var(--page-btnPageActive-background-color);
+        font-weight: 500;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 22.4px;
+        color: var(--page-btnPage-color);
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: none;
+        }
+      }
+      
+      .previous {
+        border: 0;
+        background-color: var(--page-btnPage-background-color);
+        border-radius: 4px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: .3s background-color ease-in-out;
+
+        &:hover{
+          background-color:var(--page-btnSvgHover-background-color);
+          border-bottom: none;
+        }
+
+          a{
+            padding: 4.1px 6.2px;
+          }
+      }
+
+      .next {
+        border: 0;
+        background-color: var(--page-btnPage-background-color);
+        border-radius: 4px;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: .3s background-color ease-in-out;
+
+        &:hover{
+          background-color:var(--page-btnSvgHover-background-color);
+          border-bottom: none;
+        }
+
+        a{
+          padding: 4.1px 6.2px;
+        }
+      }
+
+      .previous path {
+        fill: var(--page-btnSvg-fill);
+        transition: .3s fill ease-in-out;  
+      }
+
+      .previous:hover path {
+          fill: var(--page-btnSvgHover-fill);
+        }
+
+      .next path {
+        fill: var(--page-btnSvg-fill);
+        transition: .3s fill ease-in-out;  
+      }
+        
+      .next:hover path {
+        fill: var(--page-btnSvgHover-fill);
+      }
+      
+      .break {
+        &:hover {
+          border-bottom: none
+        }
+      }
+    }
+}

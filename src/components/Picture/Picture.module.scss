@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Inter:slnt,wght@-10..0,100..900&display=swap');
+
+.picture__box {
+  max-width: 392px;
+  max-height: 260px;
+  position: relative;
+  margin-bottom: 32px;
+  overflow: hidden;
+  transition-duration: .3s;
+  transition-property: transform, display;
+  transition-timing-function: ease-in-out;
+
+
+    .picture__img {
+    width: 392px;
+    height: 260px;
+    transition: .3s transform ease-in-out;
+    }
+
+    .picture__textArea{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--picture-textArea-background-color);
+      padding: 20px 0 20px 0;
+      width: 300px;
+      z-index: 1;
+      height: 100px;
+
+        .picture__text {
+          padding-left: 20px;
+          transform: translateY(0%);
+          transition-duration: .3s;
+          transition-property: transform;
+          transition-timing-function: ease-in-out;
+          max-height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100px;
+
+            .picture__name {
+              font-family: "Cormorant SC", serif;
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 19.38px;
+              color: var(--picture-textName-color);
+            }
+
+            .picture__year {
+              font-family: "Inter", sans-serif;
+              font-size: 12px;
+              font-weight: 700;
+              line-height: 14.52px;
+              color: var(--picture-textYearAndBefore-color);
+            }
+        }
+
+          .picture__text__hover {
+          transform: translateX(-100%);
+          display: inline-block;
+          transition-duration: .3s;
+          transition-property: transform;
+          transition-timing-function: ease-in-out;
+          position: absolute;
+          top: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100px;
+        }
+          
+            &::after{
+            content: "";
+            width: 2px;
+            height: 60px;
+            background-color:var(--picture-textYearAndBefore-color);
+            display: block;
+            position: absolute;
+            top: 20px;
+          }
+      }
+
+      &:hover .picture__img {
+        transform: scale(1.1);
+      }
+      
+      &:hover .picture__text {
+        transform: translateY(200%);
+      }
+      
+      &:hover .picture__text__hover {
+        transform: translateX(0%);
+      }
+}
+
+@media (max-width: 768px) {
+  .picture__box {
+    max-width: 352px;
+    max-height: 220px;
+
+      .picture__img {
+        width: 352px;
+        height: 220px;
+
+      }
+      
+      .picture__textArea {
+        height: 76px;
+        padding: 12px 0 12px 0;
+
+          .picture__text{
+            padding-left: 12px;
+            max-height: 52px;
+          }
+
+          .picture__text__hover {
+            top: 12px;
+          }
+          
+          &::after {
+          background-position: center;
+          height: 76px;
+          width: 24px;
+          top: 0;
+          right: -24px;
+          background-image: url(../../../icons/Vector-Text.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .picture__box {
+    max-width: 280px;
+    max-height: 185px;
+
+      .picture__img {
+        width: 280px;
+        height: 185px;
+      }
+
+      .picture__textArea {
+        height: 55px;
+        padding: 8px 0 8px 0;
+        width: 236px;
+
+          .picture__text{
+            padding-left: 12px;
+            max-height: 39px;
+
+              .picture__name {
+                font-size: 12px;
+                line-height: 14.53px;
+              }
+
+              .picture__year {
+                font-size: 8px;
+                line-height: 9.68px;
+              }
+          }
+
+          .picture__text__hover {
+            top: 8px;
+          }
+          
+          &::after {
+            height: 55px;
+      }
+    }
+  }      
+}
