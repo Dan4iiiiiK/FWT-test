@@ -9,7 +9,11 @@ function Header() {
   const [theme, setTheme] = useContext(ThemeContext)
 
   const changeTheme = () => {
-     setTheme(theme === 'light' ? 'dark' : 'light')
+    if(typeof setTheme === 'string') {
+      null
+    } else {
+      setTheme(theme === 'light' ? 'dark' : 'light')
+    }
   }
 
   return (

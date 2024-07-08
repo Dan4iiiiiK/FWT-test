@@ -1,7 +1,7 @@
 import React, { createContext, useEffect } from "react"
 import useLocalStorage from "../hooks/useLocalStorage"
 
-export const ThemeContext = createContext(['', (value: string) => {value}])
+export const ThemeContext = createContext<(string | ((value: React.SetStateAction<string>) => void))[]>([])
 
 const ThemeProvider: React.FC <{ children : React.ReactNode }> = ({children})  => {
   
