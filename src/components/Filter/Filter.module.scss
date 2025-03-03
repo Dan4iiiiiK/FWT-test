@@ -99,35 +99,29 @@
 }
 
 .filter__menu {
-  position: fixed;
-  overflow-y: auto;
+  position: absolute;
   right: 0;
   top: 0;
   padding: 6.2rem 10.2rem 19.3rem 4rem;
   width: 33.34%;
   z-index: 2;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: 0.3s;
+  transition: 0.4s;
   background-color: var(--white-black);
+  // opacity: 0;
+  // transform: translateX(0);
   height: 100%;
+  animation: anim_FilterMenu 0.4s ease-in-out forwards;
+}
 
-  &__active {
-    transform: translateX(0);
+@keyframes anim_FilterMenu {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
     opacity: 1;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--thumb-color);
-    border-radius: 2rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--white-secBlack);
-  }
-
-  &::-webkit-scrollbar {
-    width: 0.6rem;
+    transform: translateX(0);
   }
 }
 

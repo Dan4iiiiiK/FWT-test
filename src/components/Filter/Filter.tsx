@@ -158,129 +158,129 @@ function Filter() {
           <Settings />
         </button>
       </div>
-      <div
-        className={`${styles.filter__menu} ${
-          isOpen ? styles.filter__menu__active : ""
-        }`}
-      >
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={styles.filter__closed}
-        >
-          <Closed />
-        </button>
-        <div className={styles.filter__block}>
-          <details className={styles.filter__form}>
-            <summary className={styles.filter__summuryText}>ARTIST</summary>
-            <label htmlFor="" className={styles.filter__block__label}>
-              <input
-                type="text"
-                className={styles.filter__select}
-                value={authorFilter}
-                placeholder="Select the artist"
-                onClick={() => setDropdownAuthor(!dropdownAuthor)}
-                onChange={handleAuthorFilterChange}
-              />
-              <span
-                className={`${styles.filter__svg} ${
-                  dropdownAuthor === true ? styles.filter__svg__active : null
-                }`}
-              >
-                <Selector />
-              </span>
-            </label>
-            {dropdownAuthor === true && (
-              <ul className={styles.filter__select__block}>
-                {authors?.length === 0 ? (
-                  <li className={styles.filter__select__text}>
-                    <p>There are no matching results for your query.</p>
-                  </li>
-                ) : authors ? (
-                  authors?.map((author) => (
-                    <li
-                      className={styles.filter__select__text}
-                      onClick={() => clickAuthorHandler(author.name)}
-                      key={author.id}
-                    >
-                      {author.name}
-                    </li>
-                  ))
-                ) : null}
-              </ul>
-            )}
-          </details>
-          <details className={styles.filter__form}>
-            <summary className={styles.filter__summuryText}>LOCATION</summary>
-            <label htmlFor="" className={styles.filter__block__label}>
-              <input
-                type="text"
-                className={styles.filter__select}
-                value={locationFilter}
-                placeholder="Select the artist"
-                onClick={() => setDropdownLocation(!dropdownLocation)}
-                onChange={handleLocationFilterChange}
-              />
-              <span
-                className={`${styles.filter__svg} ${
-                  dropdownLocation === true ? styles.filter__svg__active : null
-                }`}
-              >
-                <Selector />
-              </span>
-            </label>
-            {dropdownLocation === true && (
-              <ul className={styles.filter__select__block}>
-                {locations?.length === 0 ? (
-                  <li className={styles.filter__select__text}>
-                    <p>There are no matching results for your query.</p>
-                  </li>
-                ) : locations ? (
-                  locations?.map((location) => (
-                    <li
-                      className={styles.filter__select__text}
-                      onClick={() => clickLocationHandler(location.location)}
-                      key={location.id}
-                    >
-                      {location.location}
-                    </li>
-                  ))
-                ) : null}
-              </ul>
-            )}
-          </details>
-          <details className={styles.filter__form}>
-            <summary className={styles.filter__summuryText}>YEARS</summary>
-            <div className={styles.filter__block__flex}>
-              <input
-                type="number"
-                placeholder="From"
-                className={styles.filter__years}
-                value={fromFilter}
-                onChange={handleFromFilterChange}
-              />
-              <div className={styles.filter__from}></div>
-              <input
-                type="number"
-                placeholder="To"
-                className={styles.filter__years}
-                value={toFilter}
-                onChange={handleToFilterChange}
-              />
-            </div>
-          </details>
-        </div>
-        <div className={styles.filter__button__block}>
-          <button className={styles.filter__button} onClick={handleClick}>
-            SHOW THE RESULTS
-          </button>
+      {isOpen && (
+        <div className={styles.filter__menu}>
           <button
-            className={`${styles.filter__button} ${styles.grey__filter__button}`}
-            onClick={handleClearClick}
+            onClick={() => setIsOpen(!isOpen)}
+            className={styles.filter__closed}
           >
-            CLEAR
+            <Closed />
           </button>
+          <div className={styles.filter__block}>
+            <details className={styles.filter__form}>
+              <summary className={styles.filter__summuryText}>ARTIST</summary>
+              <label htmlFor="" className={styles.filter__block__label}>
+                <input
+                  type="text"
+                  className={styles.filter__select}
+                  value={authorFilter}
+                  placeholder="Select the artist"
+                  onClick={() => setDropdownAuthor(!dropdownAuthor)}
+                  onChange={handleAuthorFilterChange}
+                />
+                <span
+                  className={`${styles.filter__svg} ${
+                    dropdownAuthor === true ? styles.filter__svg__active : null
+                  }`}
+                >
+                  <Selector />
+                </span>
+              </label>
+              {dropdownAuthor === true && (
+                <ul className={styles.filter__select__block}>
+                  {authors?.length === 0 ? (
+                    <li className={styles.filter__select__text}>
+                      <p>There are no matching results for your query.</p>
+                    </li>
+                  ) : authors ? (
+                    authors?.map((author) => (
+                      <li
+                        className={styles.filter__select__text}
+                        onClick={() => clickAuthorHandler(author.name)}
+                        key={author.id}
+                      >
+                        {author.name}
+                      </li>
+                    ))
+                  ) : null}
+                </ul>
+              )}
+            </details>
+            <details className={styles.filter__form}>
+              <summary className={styles.filter__summuryText}>LOCATION</summary>
+              <label htmlFor="" className={styles.filter__block__label}>
+                <input
+                  type="text"
+                  className={styles.filter__select}
+                  value={locationFilter}
+                  placeholder="Select the artist"
+                  onClick={() => setDropdownLocation(!dropdownLocation)}
+                  onChange={handleLocationFilterChange}
+                />
+                <span
+                  className={`${styles.filter__svg} ${
+                    dropdownLocation === true
+                      ? styles.filter__svg__active
+                      : null
+                  }`}
+                >
+                  <Selector />
+                </span>
+              </label>
+              {dropdownLocation === true && (
+                <ul className={styles.filter__select__block}>
+                  {locations?.length === 0 ? (
+                    <li className={styles.filter__select__text}>
+                      <p>There are no matching results for your query.</p>
+                    </li>
+                  ) : locations ? (
+                    locations?.map((location) => (
+                      <li
+                        className={styles.filter__select__text}
+                        onClick={() => clickLocationHandler(location.location)}
+                        key={location.id}
+                      >
+                        {location.location}
+                      </li>
+                    ))
+                  ) : null}
+                </ul>
+              )}
+            </details>
+            <details className={styles.filter__form}>
+              <summary className={styles.filter__summuryText}>YEARS</summary>
+              <div className={styles.filter__block__flex}>
+                <input
+                  type="number"
+                  placeholder="From"
+                  className={styles.filter__years}
+                  value={fromFilter}
+                  onChange={handleFromFilterChange}
+                />
+                <div className={styles.filter__from}></div>
+                <input
+                  type="number"
+                  placeholder="To"
+                  className={styles.filter__years}
+                  value={toFilter}
+                  onChange={handleToFilterChange}
+                />
+              </div>
+            </details>
+          </div>
+          <div className={styles.filter__button__block}>
+            <button className={styles.filter__button} onClick={handleClick}>
+              SHOW THE RESULTS
+            </button>
+            <button
+              className={`${styles.filter__button} ${styles.grey__filter__button}`}
+              onClick={handleClearClick}
+            >
+              CLEAR
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
