@@ -36,31 +36,6 @@ function PictureList() {
     to: to,
   });
 
-  // useEffect(() => {
-  //   const apiUrl = "https://test-front.framework.team/paintings";
-  //   axios.get(apiUrl).then((resp) => {
-  //     const allInfo = resp.data;
-  //     setAppState(allInfo);
-  //   });
-  // }, [setAppState]);
-
-  // const axiosArray = appState;
-  // console.log(axiosArray);
-
-  // useEffect(() => {
-  //   const apiUrl = "https://test-front.framework.team/paintings";
-  //   axios.get(apiUrl).then((resp) => {
-  //     const allPersons = resp.data;
-  //     setAppState(allPersons);
-  //   });
-  // }, [setAppState]);
-
-  // console.log(appState);
-
-  // useEffect(() => {
-  //   getPosts.then((res) => console.log(res)).catch((err) => console.error(err));
-  // });
-
   return (
     <section className={styles.section__pictureList}>
       <ul className={styles.picture__container}>
