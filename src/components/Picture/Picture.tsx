@@ -5,18 +5,18 @@ import {
 } from "../../redux/rtk/picture.api";
 import styles from "./Picture.module.scss";
 
-function Picture({ imageUrl, locationId, created, authorId, name }: IPicture) {
-  const namePicture = name.toUpperCase();
+function Picture({ locationId, created, authorId, name, imageUrl }: IPicture) {
+  const namePicture = name;
 
   const { data: authors } = useAuthorApiQuery("");
   const { data: location } = useLocationApiQuery("");
 
   const authorsName = authors?.map((authors) =>
-    authors.id === authorId ? authors.name.toUpperCase() : ""
+    authors.id === authorId ? authors.name : ""
   );
 
   const locationsName = location?.map((location) =>
-    location.id === locationId ? location.location.toUpperCase() : ""
+    location.id === locationId ? location.location : ""
   );
 
   return (

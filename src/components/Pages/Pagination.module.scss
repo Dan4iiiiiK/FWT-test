@@ -1,12 +1,11 @@
 .paginate_block {
   text-align: center;
-  margin-top: 8px;
 
   li {
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 300;
-    line-height: 22.4px;
+    line-height: 2.24rem;
     color: var(--dgray-lgray);
     border: 0;
     background-color: var(--white-black);
@@ -19,7 +18,7 @@
     padding: 0;
 
     a {
-      padding: 1px 8px;
+      padding: 0.1rem 0.8rem;
     }
 
     &:hover {
@@ -31,11 +30,11 @@
       background-color: var(--selected-button);
       font-weight: 500;
       font-family: "Inter", sans-serif;
-      font-size: 16px;
-      line-height: 22.4px;
+      font-size: 1.6rem;
+      line-height: 2.24rem;
       color: var(--dgray-lgray);
       border: 0;
-      border-radius: 4px;
+      border-radius: 0.4rem;
       cursor: pointer;
 
       &:hover {
@@ -46,8 +45,8 @@
     .previous {
       border: 0;
       background-color: var(--white-black);
-      border-radius: 4px;
-      margin-right: 20px;
+      border-radius: 0.4rem;
+      margin-right: 2rem;
       cursor: pointer;
       transition: 0.3s background-color ease-in-out;
 
@@ -57,15 +56,15 @@
       }
 
       a {
-        padding: 4.1px 6.2px;
+        padding: 0.41rem 0.62rem;
       }
     }
 
     .next {
       border: 0;
       background-color: var(--white-black);
-      border-radius: 4px;
-      margin-left: 20px;
+      border-radius: 0.4rem;
+      margin-left: 2rem;
       cursor: pointer;
       transition: 0.3s background-color ease-in-out;
 
@@ -75,7 +74,7 @@
       }
 
       a {
-        padding: 4.1px 6.2px;
+        padding: 0.41rem 0.62rem;
       }
     }
 

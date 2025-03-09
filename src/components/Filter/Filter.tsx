@@ -168,7 +168,7 @@ function Filter() {
           </button>
           <div className={styles.filter__block}>
             <details className={styles.filter__form}>
-              <summary className={styles.filter__summuryText}>ARTIST</summary>
+              <summary className={styles.filter__summuryText}>artist</summary>
               <label htmlFor="" className={styles.filter__block__label}>
                 <input
                   type="text"
@@ -207,7 +207,7 @@ function Filter() {
               )}
             </details>
             <details className={styles.filter__form}>
-              <summary className={styles.filter__summuryText}>LOCATION</summary>
+              <summary className={styles.filter__summuryText}>location</summary>
               <label htmlFor="" className={styles.filter__block__label}>
                 <input
                   type="text"
@@ -248,7 +248,7 @@ function Filter() {
               )}
             </details>
             <details className={styles.filter__form}>
-              <summary className={styles.filter__summuryText}>YEARS</summary>
+              <summary className={styles.filter__summuryText}>years</summary>
               <div className={styles.filter__block__flex}>
                 <input
                   type="number"

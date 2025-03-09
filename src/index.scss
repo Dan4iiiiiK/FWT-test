@@ -10,6 +10,9 @@ html {
 
 body {
   background-color: var(--white-black);
+  width: 100vw;
+  overflow-x: hidden;
+  transition-duration: 0.3s;
 
   --white-black: #ffffff;
   --black-white: #121212;

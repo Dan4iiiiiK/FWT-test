@@ -44,9 +44,14 @@ const axiosBaseQuery =
     }
   };
 
+const BASE_URL = "https://test-front.framework.team";
+const PAINTING_URL = "/paintings";
+const AUTHORS_URL = "/authors";
+const LOCATIONS_URL = "/locations";
+
 export const pictureApi = createApi({
   baseQuery: axiosBaseQuery({
-    baseUrl: "https://test-front.framework.team",
+    baseUrl: BASE_URL,
   }),
   endpoints: (build) => ({
     pictureApi: build.query<IPicture[], IParams>({
@@ -59,7 +64,7 @@ export const pictureApi = createApi({
         from,
         to,
       }: IParams) => ({
-        url: "/paintings",
+        url: PAINTING_URL,
         method: "get",
         params: {
           _limit: limit,
@@ -74,7 +79,7 @@ export const pictureApi = createApi({
     }),
     authorApi: build.query<IAuthor[], string>({
       query: (search?: string) => ({
-        url: "/authors",
+        url: AUTHORS_URL,
         method: "get",
         params: {
           q: search,
@@ -83,7 +88,7 @@ export const pictureApi = createApi({
     }),
     locationApi: build.query<ILocations[], string>({
       query: (search?: string) => ({
-        url: "/locations",
+        url: LOCATIONS_URL,
         method: "get",
         params: {
           q: search,
