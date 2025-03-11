@@ -111,7 +111,10 @@ function Filter() {
   };
 
   const handleClick = () => {
-    dispatch(setAddFilter(object));
+    const filter = dispatch(setAddFilter(object));
+    const limit = handleLimitChange(33);
+
+    return filter && limit;
   };
 
   //li dispatch

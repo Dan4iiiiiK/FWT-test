@@ -36,6 +36,8 @@ function PictureList() {
     to: to,
   });
 
+  console.log(pictures?.length);
+
   return (
     <section className={styles.section__pictureList}>
       <ul className={styles.picture__container}>
@@ -60,13 +62,13 @@ function PictureList() {
           })
         ) : null}
       </ul>
-      {titleFilter.length > 0 ? null : (
+      {(pictures?.length as number) === 6 ? (
         <div className={styles.pages_container}>
           <Pagination
             onChangePage={(number: number) => setPageActive(number)}
           />
         </div>
-      )}
+      ) : null}
     </section>
   );
 }
