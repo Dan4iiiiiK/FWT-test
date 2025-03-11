@@ -10,11 +10,9 @@ import {
   selectTitleFilter,
 } from "../../redux/filter/flterSlice";
 import Pagination from "../Pages/Pagination";
-// import axios from "axios";
 
 function PictureList() {
   const [pageActive, setPageActive] = useState(1);
-  // const [appState, setAppState] = useState<IPicture[]>();
 
   const limit = useAppSelector(selectLimit);
 
@@ -35,8 +33,6 @@ function PictureList() {
     from: from,
     to: to,
   });
-
-  console.log(pictures?.length);
 
   return (
     <section className={styles.section__pictureList}>
