@@ -19,12 +19,19 @@ function Picture({ locationId, created, authorId, name, imageUrl }: IPicture) {
     location.id === locationId ? location.location : ""
   );
 
+  const handleImageError = (
+    event: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
+    event.currentTarget.src = "https://anart.ru/img/2016/04/zaglushka.jpg";
+  };
+
   return (
     <li className={styles.picture__box}>
       <img
         src={`https://test-front.framework.team${imageUrl}`}
         alt={name}
         className={styles.picture__img}
+        onError={handleImageError}
       />
       <div className={styles.picture__textArea}>
         <div className={styles.picture__descr}>
