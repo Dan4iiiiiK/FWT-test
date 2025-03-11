@@ -42,9 +42,7 @@ function PictureList() {
         {isError ? (
           <h1 className={styles.text__error}>error</h1>
         ) : isLoading ? (
-          setTimeout(() => {
-            <h1 className={styles.text__loading}>Loading...</h1>;
-          }, 2000)
+          <h1 className={styles.text__loading}>Loading...</h1>
         ) : pictures?.length === 0 ? (
           <div className={styles.picture_container_titleSearch}>
             <li className={styles.not__found}>

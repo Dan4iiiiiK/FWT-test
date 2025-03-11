@@ -3,10 +3,10 @@
 .picture__container {
   list-style: none;
   display: grid;
-  flex-wrap: wrap;
   grid-gap: 3.2rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 26rem);
+  grid-auto-rows: 26rem;
   margin: 2rem 0 4rem 0;
 }
 .picture_container_titleSearch {
@@ -68,6 +68,7 @@
   .picture__container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 22rem);
+    grid-auto-rows: 22rem;
     grid-gap: 2.4rem;
   }
 }
@@ -83,5 +84,6 @@
 @media (width < 510px) {
   .picture__container {
     grid-template-rows: repeat(6, 18.5rem);
+    grid-auto-rows: 18.5rem;
   }
 }
